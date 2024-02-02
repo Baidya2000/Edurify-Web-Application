@@ -1,30 +1,42 @@
-import React from 'react';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import React from "react";
+import { Container, Row, Col, Form, FormControl, Button } from "react-bootstrap";
 
-function ContactInformation() {
+const ContactInformation = () => {
   return (
-    <Form>
-      <Form.Group controlId="formName">
-        <Form.Label>Name</Form.Label>
-        <Form.Control type="text" placeholder="Enter your name" />
-      </Form.Group>
-
-      <Form.Group controlId="formEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter your email" />
-      </Form.Group>
-
-      <Form.Group controlId="formMessage">
-        <Form.Label>Message</Form.Label>
-        <Form.Control as="textarea" rows={3} placeholder="Enter your message" />
-      </Form.Group>
-
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+    <Container className="mt-5 border rounded-3">
+      <Row className="mt-4 p-3">
+        <Col >
+          <h1 className="float-start ">Contact Information</h1>
+        </Col>
+        <Col md={2}>
+          <Form.Group>
+            <Form.Label>Choose Form Color:</Form.Label>
+            <Form.Control as="select">
+              <option value="usa">Green</option>
+              <option value="canada">Blue</option>
+            </Form.Control>
+          </Form.Group>
+        </Col>
+        <Col md={2}>
+          <Form.Group>
+            <Form.Label>Form Border:</Form.Label>
+            <Form.Control as="select">
+              <option value="ca">Grey</option>
+              <option value="ny">Black</option>
+            </Form.Control>
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row className="mb-4">
+        <Col md={12}>
+          <Form.Group>
+            <Form.Label className="text-primary"></Form.Label>
+            <FormControl placeholder="Form Description" />
+          </Form.Group>
+        </Col>
+      </Row>
+    </Container>
   );
-}
+};
 
 export default ContactInformation;
