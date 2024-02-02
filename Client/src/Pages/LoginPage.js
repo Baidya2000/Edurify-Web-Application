@@ -4,9 +4,9 @@ import Navbar from "../Components/Navbar/HomeNavbar";
 
 function LoginPage() {
   return (
-    <div>
+    <>
       <Login />
-    </div>
+    </>
   );
 }
 export default LoginPage;
