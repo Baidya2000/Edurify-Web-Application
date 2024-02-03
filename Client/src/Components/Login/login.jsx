@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Image } from "react-bootstrap";
 import LoginImage from "../../Assets/LoginLogo.jpeg";
 import { useNavigate } from "react-router-dom";
+import logo from "../../Assets/EasyformLogo.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ const Login = () => {
   return (
     <Row className="justify-content-between vh-100">
       <Col className="mx-5 align-self-center">
+        <img src={logo} alt="logo"style={{ width: '166px' }} className="float-start"/>
         <h1 className="text-center mt-5 text-success fw-bold">Welcome</h1>
 
         <p className="text-center">Log in to your Easyform</p>

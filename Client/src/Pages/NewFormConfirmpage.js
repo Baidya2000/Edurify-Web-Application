@@ -4,17 +4,19 @@ import ContactInformation from "../Components/Common/ContactInformation";
 import Name from "../Components/Common/Name";
 import UntitledQuestion from "../Components/Common/UntitledQuestion";
 import SendViaEmail from "../Components/Common/SendViaEmail";
-
+import { Container } from "react-bootstrap";
 
 function NewFormConfirmpage() {
     return (
       <>
-        <FormNavBar />;
-        <Header />;
-        <ContactInformation />;
-        <Name/>;
-        <UntitledQuestion />;
+      <Container style={{ width: '1124px' }}>
+        <FormNavBar />
+        <Header />
+        <ContactInformation />
+        <Name/>
+        <UntitledQuestion />
         <SendViaEmail/>
+        </Container>
       </>
     );
   }

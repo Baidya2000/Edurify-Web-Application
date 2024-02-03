@@ -6,9 +6,9 @@ function UntitledQuestion() {
   return (
     
     <Form>
-      <Container className='border '>
+      <Container className='border rounded-3 mt-5 p-5 mb-5'>
       <Form.Group controlId="formQuestion">
-        <h1 className='float-start mt-5'>Untitled Question</h1>
+        <h3 className='float-start mb-3'>Untitled Question</h3>
         <Form.Control as="textarea" rows={3} placeholder="Type your question here" />
       </Form.Group>
 
@@ -24,9 +24,6 @@ function UntitledQuestion() {
         </Form.Control>
       </Form.Group>
       </Container>
-      <button type="button" className="btn btn-success btn-lg m-3 p-3">
-        Send
-        </button>
         </Form>
   );
 }

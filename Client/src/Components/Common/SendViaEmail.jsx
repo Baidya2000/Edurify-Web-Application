@@ -1,65 +1,62 @@
-import React, { useState } from "react";
+import React from "react";
+import { Form, Button } from "react-bootstrap";
 
 const SendViaEmail = () => {
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [isSending, setIsSending] = useState(false);
+  const [email, setEmail] = React.useState("");
+  const [subject, setSubject] = React.useState("");
+  const [message, setMessage] = React.useState("");
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubjectChange = (e) => {
-    setSubject(e.target.value);
-  };
-
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value);
-  };
-
-  const handleSendEmail = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSending(true);
-
-    // Replace this with your actual email sending logic
-    const response = await fetch("https://api.example.com/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, subject, message }),
-    });
-
-    if (response.ok) {
-      alert("Email sent successfully!");
-    } else {
-      alert("Failed to send email. Please try again.");
-    }
-
-    setIsSending(false);
+    // handle form submission here
   };
 
   return (
-    <div>
-      <h3>Send Via Email</h3>
-      <form onSubmit={handleSendEmail}>
-        <div>
-          <label htmlFor="email">To:</label>
-          <input type="email" id="email" value={email} onChange={handleEmailChange} required />
-        </div>
-        <div>
-          <label htmlFor="subject">Subject:</label>
-          <input type="text" id="subject" value={subject} onChange={handleSubjectChange} required />
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" value={message} onChange={handleMessageChange} required />
-        </div>
-        <button type="submit" disabled={isSending}>
-          {isSending ? "Sending..." : "Send"}
-        </button>
-      </form>
+    <div className="border rounded-3 p-5 mb-5 ">
+      <Form onSubmit={handleSubmit}>
+
+        <Form.Group controlId="formEmail">
+          <h3 className="float-start">Send Via</h3>
+          <Form.Control
+            type="email"
+            placeholder="Enter email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formSubject">
+          <Form.Label></Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group controlId="formMessage" className="mb-3">
+          <Form.Label></Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
+            placeholder="Message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+        </Form.Group>
+
+        <Form.Group className="float-start d-flex gap-2">
+          <button type="button" class="btn btn-success">
+            Send
+          </button>
+
+          <button type="button" class="btn btn-outline-secondary">
+            Cancel
+          </button>
+        </Form.Group>
+
+      </Form>
     </div>
   );
 };

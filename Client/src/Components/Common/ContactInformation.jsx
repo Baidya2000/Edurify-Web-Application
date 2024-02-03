@@ -3,8 +3,9 @@ import { Container, Row, Col, Form, FormControl, Button } from "react-bootstrap"
 
 const ContactInformation = () => {
   return (
-    <Container className="mt-5 border rounded-3">
-      <Row className="mt-4 p-3">
+    <Container className="mt-5 border  rounded-3 ">
+
+      <Row className="mt-4 p-3 ">
         <Col >
           <h1 className="float-start ">Contact Information</h1>
         </Col>

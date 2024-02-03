@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Image } from "react-bootstrap";
 import axios from "axios";
 import logo from "../../Assets/EasyformLogo.png";
-import LoginImage from "../../Assets/LoginLogo.jpeg";
+import LoginImage from "../../Assets/girl on laptop.png";
 
 import { useNavigate } from "react-router-dom";
 
@@ -43,6 +43,8 @@ const SignUp = () => {
   return (
     <Row className="justify-content-between vh-100">
       <Col className="mx-5 align-self-center">
+      <img src={logo} alt="logo"style={{ width: '166px' }} className="float-start"/>
+
         <h1 className="text-center mt-5">Join Easyform</h1>
         <p>Sign up for free!</p>
 

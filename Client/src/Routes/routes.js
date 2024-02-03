@@ -9,7 +9,7 @@ import NewformPages from "../Pages/NewFormPages";
 import DasboradPage from "../Pages/DasboradPage";
 import NewformUpdatePage from "../Pages/NewFormUpadePage";
 import NewFormConfirmpage from "../Pages/NewFormConfirmpage";
-import RequestcontactInformationPage from "../Pages/RequestcontactInformationPage";
+import ContactResponsePage from "../Pages/ContactResponsePage";
 
 function AppRouter() {
   return (
@@ -22,8 +22,11 @@ function AppRouter() {
         <Route path="/new-form" element={<NewformPages />} />
         <Route path="/new-Updateform" element={<NewformUpdatePage />} />
         <Route path="/Confirm-form" element={<NewFormConfirmpage />} />
-        <Route path="/Requestcontact-information" element={<RequestcontactInformationPage />} />
-        
+               <Route
+          path="/contact-response"
+          element={<ContactResponsePage />}
+        />
+
         {/* <Route path="/" element={<HomePage />} /> */}
       </Routes>
     </Router>
