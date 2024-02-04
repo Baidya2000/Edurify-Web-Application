@@ -1,11 +1,13 @@
 import React from 'react';
-import { Navbar, Nav } from 'react-bootstrap';
+import { Navbar, Nav, Image } from 'react-bootstrap';
+import logo from '../../Assets/EasyformLogo.png'
 
 const HomeNavbar = () => {
   return (
-    <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="#home">Easyform</Navbar.Brand>
-      <Nav className="mr-auto">
+    <Navbar bg="light" variant="light">
+      <Image style={{ width: "166px" }}
+        className="float-start ms-2" src={logo}></Image>
+      <Nav className="ml-auto d-flex">
         <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link href="#products">Products</Nav.Link>
         <Nav.Link href="#templates">Templates</Nav.Link>
