@@ -93,9 +93,10 @@ const SignUp = () => {
 
           <div className="d-grid gap-2 mt-4">
             <button
-              className="btn btn-success"
+              className="btn"
               type="button"
               onClick={handleSubmit}
+              style={{ backgroundColor : "#00D78B" }}
             >
               Create Account
             </button>
@@ -113,7 +114,7 @@ const SignUp = () => {
         className="vh-100 align-self-center "
         style={{ backgroundColor: "#00d78a" }}
       >
-        <div>
+        <div className="w-100 d-flex justify-content-center align-item-center">
           <Image src={LoginImage} />
         </div>
       </Col>

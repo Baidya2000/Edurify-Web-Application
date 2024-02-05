@@ -13,7 +13,7 @@ function NewformPage() {
         <Header />
         <ContactInformation />
         <UntitledQuestion />
-        <Button className="btn btn-success rounded-2">Save</Button>
+        <Button className="btn rounded-2 px-5"style={{ backgroundColor : "#00D78B" }}>Send</Button>
       </Container>
     </>
   );

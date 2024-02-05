@@ -47,11 +47,11 @@ const SendViaEmail = () => {
         </Form.Group>
 
         <Form.Group className="float-start d-flex gap-2">
-          <button type="button" class="btn btn-success">
+          <button type="button" style={{ backgroundColor : "#00D78B" }} className="btn  rounded-2 px-3">
             Send
           </button>
 
-          <button type="button" class="btn btn-outline-secondary">
+          <button type="button" className="btn btn-outline-secondary">
             Cancel
           </button>
         </Form.Group>

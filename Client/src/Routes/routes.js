@@ -23,8 +23,8 @@ function AppRouter() {
         <Route path="/new-form" element={<NewformPages />} />
         <Route path="/new-Updateform" element={<NewformUpdatePage />} />
         <Route path="/Confirm-form" element={<NewFormConfirmpage />} />
-        <Route path="/Home" element={<HomePage />} />
-               <Route
+        <Route path="/" element={<HomePage />} />
+        <Route
           path="/contact-response"
           element={<ContactResponsePage />}
         />

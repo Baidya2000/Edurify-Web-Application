@@ -8,6 +8,7 @@ import {
   ListGroupItem,
 } from "react-bootstrap";
 import logo from "../../Assets/EasyformLogo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (

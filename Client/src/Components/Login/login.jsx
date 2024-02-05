@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
-    navigate("/new-form");
+    navigate("/");
     // Add your authentication logic here
   };
 
@@ -22,7 +22,7 @@ const Login = () => {
     <Row className="justify-content-between vh-100">
       <Col className="mx-5 align-self-center">
         <img src={logo} alt="logo"style={{ width: '166px' }} className="float-start"/>
-        <h1 className="text-center mt-5 text-success fw-bold">Welcome</h1>
+        <h1 className="text-center mt-5 fw-bold">Welcome</h1>
 
         <p className="text-center">Log in to your Easyform</p>
 
@@ -50,7 +50,8 @@ const Login = () => {
 
           <div className="d-grid gap-2 mt-5">
             <button
-              className="btn btn-success"
+              className="btn"
+              style={{ backgroundColor : "#00D78B" }}
               type="button"
               onClick={handleSubmit}
             >
@@ -59,7 +60,7 @@ const Login = () => {
           </div>
 
           <p className="justify-content-center">
-            <a href="#" className="btn btn-primary mt-4 text-center">
+            <a href="#" className="btn float-end text-secondary ">
               Forgot Password?
             </a>
           </p>
@@ -83,7 +84,7 @@ const Login = () => {
         className="vh-100 align-self-center "
         style={{ backgroundColor: "#00d78a" }}
       >
-        <div>
+        <div className="w-100 d-flex justify-content-center align-item-center">
           <Image src={LoginImage} />
         </div>
       </Col>
