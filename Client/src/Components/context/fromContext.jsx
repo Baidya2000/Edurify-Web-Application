@@ -7,8 +7,8 @@ const FromContext = createContext();
 export const FormContextProvider = ({ children }) => {
   const [form, setForm] = useState({
     name: "",
-    colour: "",
-    border: "",
+    colour: "green",
+    border: "grey",
     questions: [],
   });
 

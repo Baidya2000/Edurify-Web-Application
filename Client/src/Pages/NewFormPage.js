@@ -1,10 +1,13 @@
 import Newform from "../Components/NewForm/NewForm";
 
+import { FormContextProvider } from "../Components/context/fromContext";
 
 function NewformPage() {
   return (
     <>
-      <Newform />
+      <FormContextProvider>
+        <Newform />
+      </FormContextProvider>
     </>
   );
 }
