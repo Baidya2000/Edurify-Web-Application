@@ -59,19 +59,16 @@ const addForm = async (req, res) => {
 };
 
 const getForm = async (req, res) => {
+
+  console.log(req.body);
   try {
-    const form = new Form({
-      userId: req.body.id,
-      name: req.body.form.name,
-      colour: req.body.form.colour,
-      border: req.body.form.border,
-      questions: req.body.form.questions,
-    });
-    form.save();
-    res.status(200).send("saved");
+    // Find user by email
+    const fromData = await Form.find({ userId: req.body.id });
+    console.log(fromData);
+    res.status(200).send({ status: "success", formData: fromData });
   } catch (error) {
     console.log(error);
-    res.status(200).send("error");
+    res.status(500).send("An error occurred");
   }
 };
 

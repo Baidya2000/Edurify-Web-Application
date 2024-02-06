@@ -11,7 +11,10 @@ import SendViaEmail from "../NewForm/SendViaEmail";
 import { useEffect } from "react";
 import axios from "axios";
 
+import { useNavigate } from "react-router-dom";
+
 function Newform() {
+  const navigate = useNavigate();
   const { form } = useFormContext();
 
   async function addForm() {
@@ -19,7 +22,9 @@ function Newform() {
       id: localStorage.getItem("id"),
       form: form,
     });
-    console.log(res);
+    if (res.data === "saved") {
+      navigate("/Dashboard");
+    }
   }
 
   useEffect(() => {}, [form.questions]);

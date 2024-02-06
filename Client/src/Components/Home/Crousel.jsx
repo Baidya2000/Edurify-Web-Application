@@ -10,6 +10,8 @@ const CustomCarousel = () => {
       image: customer,
       heading: "Customers Love Easyform",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      comments:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       name: "Suman Chakraborty",
       Designation: "Business Developer",
     },
@@ -52,6 +54,7 @@ const CustomCarousel = () => {
               src={data.image}
               alt="slide"
             />
+            <h6>{data.comments}</h6>
             <h3>Suman Chakraborty</h3>
             <p>Business Developer</p>
           </div>

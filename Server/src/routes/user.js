@@ -9,6 +9,6 @@ userRouter.post("/login", userController.login);
 
 userRouter.post("/add-form", userController.addForm);
 
-userRouter.post("/get-form", userController.getForm);
+userRouter.post("/get-forms", userController.getForm);
 
 module.exports = userRouter;

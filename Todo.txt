@@ -1,0 +1,4 @@
+1) Send The email via smtp or any third party source
+2) Once the link is clicked , show the form and accept the data
+3) Store the data in a database or preferebly sometihing like google sheets
+4) Collect the data and show in response tab
