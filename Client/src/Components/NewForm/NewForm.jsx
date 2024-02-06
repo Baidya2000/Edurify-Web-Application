@@ -9,9 +9,18 @@ import UntitledQuestion from "../NewForm/UntitledQuestion";
 import AddedQuestions from "./AddedQuestions";
 import SendViaEmail from "../NewForm/SendViaEmail";
 import { useEffect } from "react";
+import axios from "axios";
 
 function Newform() {
   const { form } = useFormContext();
+
+  async function addForm() {
+    const res = await axios.post("http://localhost:8080/add-form", {
+      id: localStorage.getItem("id"),
+      form: form,
+    });
+    console.log(res);
+  }
 
   useEffect(() => {}, [form.questions]);
 
@@ -34,6 +43,7 @@ function Newform() {
         <Button
           className="btn rounded-2 px-5"
           style={{ backgroundColor: "#00D78B" }}
+          onClick={addForm}
         >
           Save
         </Button>

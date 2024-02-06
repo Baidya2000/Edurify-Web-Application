@@ -4,24 +4,40 @@ import LoginImage from "../../Assets/LoginLogo.jpeg";
 import { useNavigate } from "react-router-dom";
 import logo from "../../Assets/EasyformLogo.png";
 
+import axios from "axios";
+
 const Login = () => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-    navigate("/");
-    // Add your authentication logic here
+
+    const res = await axios.post("http://localhost:8080/login", {
+      email: email,
+      password: password,
+    });
+
+    if ((res.data.status === "success")) {
+      localStorage.setItem("id", res.data.id);
+      navigate("/");
+      return;
+    }
+
+    alert(res.data.status);
   };
 
   return (
     <Row className="justify-content-between vh-100">
       <Col className="mx-5 align-self-center">
-        <img src={logo} alt="logo"style={{ width: '166px' }} className="float-start"/>
+        <img
+          src={logo}
+          alt="logo"
+          style={{ width: "166px" }}
+          className="float-start"
+        />
         <h1 className="text-center mt-5 fw-bold">Welcome</h1>
 
         <p className="text-center">Log in to your Easyform</p>
@@ -51,7 +67,7 @@ const Login = () => {
           <div className="d-grid gap-2 mt-5">
             <button
               className="btn"
-              style={{ backgroundColor : "#00D78B" }}
+              style={{ backgroundColor: "#00D78B" }}
               type="button"
               onClick={handleSubmit}
             >

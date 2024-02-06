@@ -6,7 +6,9 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  formData : [{}]
+  formData: [],
 });
 
-module.exports = mongoose.model("User", userSchema);
+const User = mongoose.model("User", userSchema);
+
+module.exports = User;

@@ -31,7 +31,7 @@ function UntitledQuestion() {
 
   return (
     <Form>
-      <Container className="border rounded-3 mt-5 p-5 mb-5">
+      <Container className="border rounded-3 my-5 p-5">
         <Form.Group controlId="formQuestion">
           <h3 className="float-start mb-3">Untitled Question</h3>
           <Form.Control
@@ -72,12 +72,12 @@ function UntitledQuestion() {
         </Form.Group>
 
         <Button
-          className="btn btn-success float-end mt-2 mb-2"
+          className="btn float-end my-2"
+          style={{ backgroundColor: "#00D78B" }}
           onClick={addQuestion}
         >
           Add
         </Button>
-        
       </Container>
     </Form>
   );
