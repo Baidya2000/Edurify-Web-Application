@@ -1,5 +1,6 @@
 const database = require("../utils/database.js");
 const User = require("../models/user");
+const Form = require("../models/form");
 
 const signup = async (req, res) => {
   try {
@@ -41,16 +42,37 @@ const login = async (req, res) => {
 };
 
 const addForm = async (req, res) => {
-  console.log(req.body.form, req.body.id);
-
-  result = User.updateOne(
-    { _id: req.body.id },
-    { $push: { formData: req.body.form } }
-  );
-
-  console.log(result);
-
-  res.status(200).send("Baler Form");
+  try {
+    const form = new Form({
+      userId: req.body.id,
+      name: req.body.form.name,
+      colour: req.body.form.colour,
+      border: req.body.form.border,
+      questions: req.body.form.questions,
+    });
+    form.save();
+    res.status(200).send("saved");
+  } catch (error) {
+    console.log(error);
+    res.status(200).send("error");
+  }
 };
 
-module.exports = { signup, login, addForm };
+const getForm = async (req, res) => {
+  try {
+    const form = new Form({
+      userId: req.body.id,
+      name: req.body.form.name,
+      colour: req.body.form.colour,
+      border: req.body.form.border,
+      questions: req.body.form.questions,
+    });
+    form.save();
+    res.status(200).send("saved");
+  } catch (error) {
+    console.log(error);
+    res.status(200).send("error");
+  }
+};
+
+module.exports = { signup, login, addForm, getForm };
